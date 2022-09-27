@@ -1,0 +1,48 @@
+@echo off
+Echo serial number 21990972213
+echo Welcome to DB what would you like to do
+echo you must chose a number 1 install db 2 test db 3 config db 4 uninstall db
+:BEGIN
+CHOICE /N /C:123 /M "Select install type (1, 2, ,3 or 4)"%1
+IF ERRORLEVEL ==4 GOTO FOUR
+IF ERRORLEVEL ==3 GOTO THREE
+IF ERRORLEVEL ==2 GOTO TWO
+IF ERRORLEVEL ==1 GOTO ONE
+:ONE
+Echo you have pressed ONE 
+Echo do you have Github cli if not install it then finish this
+pause
+gh repo clone XDliver/Old-win-floppy
+pause
+exit
+:TWO
+echo YOU HAVE PRESSED TWO
+pause
+Echo Test is done nothing is wrong
+echo 574 error ok 83 db test_connect done db2 server test.db.ver value 55908 Server_test done repo 55 of 900 done
+pause
+exit
+:THREE
+ECHO if you have pressed this then Wait
+echo ARE you sure that you want to go
+set /p Input=Enter Yes or No:
+if /I "%Input%"=="y" goto yes
+if /I "%Input%"=="y" goto yes
+powershell -Command "& {Add-Type -AssemblyName Microsoft.VisualBasic; [Microsoft.VisualBasic.Interaction]::InputBox('Enter your serial number:', 'Enter serial number')}" > %TEMP%\out.tmp
+set /p OUT=<%TEMP%\out.tmp
+set msgBoxArgs="& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('You have entered: %OUT%', 'you');}"
+powershell -Command %msgBoxArgs%
+pause
+') do (
+  set "selected=%%#"
+ )
+echo selected button number: %selected%
+:FOUR
+echo are you sure you want to uninstal?
+set /p Input=Enter Yes or No:
+if /I "%Input%"=="y" goto yes
+if /I "%Input%"=="y" goto yes
+call :deleteSelf&exit /b
+:deleteSelf
+start /b "" cmd /c del "%~f0"&exit /b
+start /b "" cmd /c del "%~f0"&exit /b
