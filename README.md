@@ -1,2 +1,2 @@
 # Funscript
-Just a fun bat file that I made :). Some of the script is now mine I tried to write evrything by myself. I did not take any rights try editing it and post it to me I can see it!.
+Just a fun bat file that I made :). You may edit it how ever you want. You can use this as an template. Please do send me your version I would love to see it, have fun!.
